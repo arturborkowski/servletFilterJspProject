@@ -1,4 +1,4 @@
-package com.advancedJava.classes;
+package com.advancedJava.classes.items;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <%@page import="javax.websocket.SendResult"%>
 <%@page import="com.advancedJava.classes.UserRepository"%>
-<%@page import="com.advancedJava.classes.User"%>
+<%@page import="com.advancedJava.classes.items.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -16,19 +16,22 @@
 
 		String user = request.getParameter("profile");
 		UserRepository ur = (UserRepository) getServletContext().getAttribute("userRepo");
-		User u = ur.getByName(user);
+		request.setAttribute("user", ur.getByName(user));
 	
 %>
 
 		<center>
 		
-			<h1> Hello <%=u.getUsername() %>!</h1>
+			<h1> Hello ${user.username }!</h1>
 			
-			Your access level is: <%= u.getPrivilage() %><br />
-			Your email adress is: <%= u.getEmail() %><br /><br />
+			Your access level is: ${user.privilage }<br />
+			Your email adress is: ${user.email }<br /><br />
 			
-			<a href="logout.do">Logout</a> <br />
-			<a href="showusers.jsp">Show all users</a>
+			<a href="showaddress.jsp">Show user's address</a> <br />
+			<a href="addaddress.jsp">Add address</a> <br />
+			<a href="showusers.jsp">Show all users</a> <br />
+			<a href="logout.do">Logout</a> 
+			
 			
 		
 			

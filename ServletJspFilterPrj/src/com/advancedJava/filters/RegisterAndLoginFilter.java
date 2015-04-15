@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.advancedJava.classes.User;
+import com.advancedJava.classes.DbProvider;
+import com.advancedJava.classes.UserRepository;
+import com.advancedJava.classes.items.User;
 
 
 @WebFilter({ "/index.jsp", "/register.jsp" })
@@ -31,6 +33,8 @@ public class RegisterAndLoginFilter implements Filter {
 		HttpServletResponse resp = (HttpServletResponse) response;
 		HttpSession session = req.getSession();
 		
+
+		
 		if(session.getAttribute("logged") != null) {
 			resp.sendRedirect("profile.jsp?profile="+((User)session.getAttribute("logged")).getUsername());
 		}
@@ -40,6 +44,10 @@ public class RegisterAndLoginFilter implements Filter {
 
 	
 	
-	public void init(FilterConfig fConfig) throws ServletException {}
+	public void init(FilterConfig fConfig) throws ServletException {
+		
+		// w tym miejscu tworze instancje bazy danych, za jej pomoca tworze repozytorium, ktore potem zapisuje w kontekscie aplikacji
+		fConfig.getServletContext().setAttribute("userRepo", new UserRepository(DbProvider.getDataBase()));
+	}
 
 }

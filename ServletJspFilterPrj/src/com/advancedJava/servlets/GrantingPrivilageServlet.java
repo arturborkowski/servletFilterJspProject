@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.advancedJava.classes.Privilage;
 import com.advancedJava.classes.UserRepository;
+import com.advancedJava.classes.items.Privilage;
 
 
 @WebServlet("/grant.do")

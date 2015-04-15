@@ -17,6 +17,9 @@ import javax.servlet.http.HttpSession;
 @WebFilter(
 		urlPatterns = { 
 				"/profile.jsp", 
+				"/showaddress.jsp",
+				"/editaddress.jsp",
+				"/addaddress.jsp",
 				"/grant.jsp", 
 				"/premium.jsp", 
 				"/showusers.jsp",

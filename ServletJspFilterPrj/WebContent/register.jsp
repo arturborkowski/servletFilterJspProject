@@ -14,6 +14,7 @@
 	<%
 		if(request.getServletContext().getAttribute("regError") != null) {
 			out.println("<font color=red>"+getServletContext().getAttribute("regError")+"</font>");
+			request.getServletContext().setAttribute("regError", null);
 		}
 	%>
 	

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.advancedJava.classes.User;
+import com.advancedJava.classes.items.User;
 
 
 @WebFilter("/profile.jsp")

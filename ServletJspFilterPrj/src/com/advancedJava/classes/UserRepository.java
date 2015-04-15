@@ -3,6 +3,10 @@ package com.advancedJava.classes;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.advancedJava.classes.items.DummyDataBase;
+import com.advancedJava.classes.items.Privilage;
+import com.advancedJava.classes.items.User;
+
 public class UserRepository {
 
 	private DummyDataBase db;

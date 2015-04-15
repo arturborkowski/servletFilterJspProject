@@ -1,11 +1,20 @@
-package com.advancedJava.classes;
+package com.advancedJava.classes.items;
 
-public class User {
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+public class User implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String username;
 	private String password;
 	private String email;
 	private Privilage privilage;
+	private List<Address> addresses = new ArrayList<Address>();
 	
 	public User() {}
 
@@ -43,6 +52,18 @@ public class User {
 
 	public void setPrivilage(Privilage privilage) {
 		this.privilage = privilage;
+	}
+
+
+
+	public List<Address> getAddresses() {
+		return addresses;
+	}
+
+
+
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
 	}
 
 	
